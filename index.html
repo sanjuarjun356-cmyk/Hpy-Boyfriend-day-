@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Boyfriend Day ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#090909,#210b18,#080808);color:#fff;text-align:center;min-height:100vh;overflow-x:hidden}
+.page{min-height:100vh;padding:55px 20px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+h1{font-size:clamp(2.2rem,9vw,4.5rem);margin-bottom:15px}
+.pink{color:#ff6fa8}
+.subtitle{font-size:1.1rem;color:#ddd;max-width:650px;line-height:1.7}
+button{margin-top:28px;padding:14px 28px;border:0;border-radius:30px;background:#ff5f9e;color:white;font-size:1rem;font-weight:bold;cursor:pointer;box-shadow:0 8px 25px #ff5f9e55}
+.card{width:min(900px,95%);background:#ffffff0d;border:1px solid #ffffff18;backdrop-filter:blur(10px);border-radius:25px;padding:30px;margin:20px auto;box-shadow:0 15px 45px #0008}
+.letter{font-size:1.08rem;line-height:1.9;color:#eee}
+.reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:20px}
+.reason{padding:20px;border-radius:18px;background:#ff5f9e16;border:1px solid #ff5f9e33}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:20px}
+.photo{height:220px;border-radius:18px;background:#ffffff0d;border:1px dashed #ffffff35;display:flex;align-items:center;justify-content:center;color:#aaa;padding:15px}
+.hidden{display:none}
+.heart{position:fixed;bottom:-30px;font-size:22px;animation:float 6s linear infinite;opacity:.8}
+@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.fade{animation:fade 1.3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.small{color:#aaa;margin-top:20px;font-size:.9rem}
+</style>
+</head>
+<body>
+
+<section class="page fade">
+<div>💗 ✨ 💗</div>
+<h1>Happy Boyfriend Day,<br><span class="pink">My Favourite Person ❤️</span></h1>
+<p class="subtitle">A tiny website for the person who makes ordinary days feel a little more special.</p>
+<button onclick="showSurprise()">Open Your Surprise 🎁</button>
+</section>
+
+<section id="surprise" class="page hidden fade">
+<div class="card">
+<h2 class="pink">A little message for you 💌</h2>
+<p class="letter">
+Happy Boyfriend Day, my love. 🫂❤️<br><br>
+Thank you for being there through the happy days, silly fights,
+random talks and all the little moments in between.
+You have a very special place in my heart, and I’m grateful for
+every memory we’ve made together.<br><br>
+I hope this little surprise reminds you how loved and appreciated
+you are. ❤️<br><br>
+<b>Always my favourite person. 🥹💗</b>
+</p>
+</div>
+
+<div class="card">
+<h2 class="pink">Things I love about you 🥹</h2>
+<div class="reasons">
+<div class="reason">Your smile 🤭</div>
+<div class="reason">Your voice ❤️</div>
+<div class="reason">Your eyes 👀</div>
+<div class="reason">The way you understand me 🫂</div>
+<div class="reason">Our random talks 🌙</div>
+<div class="reason">All our little memories ✨</div>
+</div>
+</div>
+
+<div class="card">
+<h2 class="pink">Our Memories 📸</h2>
+<p class="small">Replace these boxes with your favourite photos.</p>
+<div class="gallery">
+<div class="photo">📷 Photo 1</div>
+<div class="photo">📷 Photo 2</div>
+<div class="photo">📷 Photo 3</div>
+<div class="photo">📷 Photo 4</div>
+</div>
+</div>
+
+<div class="card">
+<h2 class="pink">One last thing... 🎀</h2>
+<p class="letter">No matter how many memories we make, I’ll always keep the little moments closest to my heart. ❤️</p>
+<button onclick="finalMessage()">Click me 💗</button>
+<p id="final" class="letter hidden" style="margin-top:25px">
+You are loved more than this little website can ever explain. 🫂❤️
+</p>
+</div>
+</section>
+
+<script>
+function showSurprise(){
+document.getElementById("surprise").classList.remove("hidden");
+document.getElementById("surprise").scrollIntoView({behavior:"smooth"});
+}
+function finalMessage(){
+document.getElementById("final").classList.remove("hidden");
+}
+setInterval(()=>{
+const h=document.createElement("div");
+h.className="heart";
+h.textContent=["❤️","💗","💕","✨"][Math.floor(Math.random()*4)];
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(4+Math.random()*4)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),8000);
+},700);
+</script>
+</body>
+</html>
